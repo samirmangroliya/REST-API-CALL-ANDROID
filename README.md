@@ -8,7 +8,11 @@ You just need to call webservice using ParseController class.
             map.put("email", strEmail); //parameters goes here.
             map.put("password", strPassword);
             
-            // this is post call, check 2nd parameter, map will send parameters and url, true is boolean to show progress dialog, Loading is message white requesting. Finall Success or failed will call.
+            // this is post call, check 2nd parameter,
+              map will send parameters and url,
+              true is boolean to show progress dialog,
+              Loading is message white requesting.
+              Finaly Success or failed will be called.
             
             new ParseController(LoginActivity.this, ParseController.HttpMethod.POST, map, true, "Loading...", new                                AsyncTaskCompleteListener() {
 
