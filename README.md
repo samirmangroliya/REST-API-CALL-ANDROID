@@ -3,28 +3,26 @@ This is rest client to call webservice or API. You can easily get data from the 
 
 You just need to call webservice using ParseController class.
 
+            //create hashmap to send params            
             Map<String, String> map = new HashMap<>();
             map.put("url", ENTER YOUR URL); // you can user global single url, check parsecontroller class.
             map.put("email", strEmail); //parameters goes here.
             map.put("password", strPassword);
             
-            // this is post call, check 2nd parameter,
+            /* this is post call, check 2nd parameter,
               map will send parameters and url,
               true is boolean to show progress dialog,
               Loading is message white requesting.
-              Finaly Success or failed will be called.
+              Finaly Success or failed will be called.*/
             
-            new ParseController(LoginActivity.this, ParseController.HttpMethod.POST, map, true, "Loading...", new                                AsyncTaskCompleteListener() {
-
+            new ParseController(LoginActivity.this, ParseController.HttpMethod.POST, map, true, "Loading...",
+            new AsyncTaskCompleteListener() {
                 @Override
                 public void onSuccess(String response) {
                     try {
                     
                         // you will get response string here...
-                        JSONObject objMain = new JSONObject(response);
-                       
-                        
-                        
+                        JSONObject objMain = new JSONObject(response);                        
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
